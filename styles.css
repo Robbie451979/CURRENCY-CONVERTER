@@ -96,3 +96,21 @@ section {
     gap: 5px;
     width: 100px;
 }
+
+@media screen and (max-width: 500px) {
+
+body {
+    background-color: #555555;
+
+}
+
+main {
+    width: 338px;
+    background: #f4f4f4;
+    border-radius: 20px;
+    margin: 0 auto 40px;
+    padding: 44px 24px 23px;
+
+}
+
+}
