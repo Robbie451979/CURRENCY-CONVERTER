@@ -14,7 +14,6 @@ function changeCurrency() {
 
         currencyName.innerHTML = "Dólar americano"
         currencyImage.src = "./assets/The USA.jpeg"
-
     }
 
     if (currencySelect.value == "euro") {
@@ -22,13 +21,27 @@ function changeCurrency() {
         currencyName.innerHTML = "Euro"
         currencyImage.src = "./assets/Euro.png"
     }
+
+    if (currencySelect.value == "libra") {
+
+        currencyName.innerHTML = "Libra"
+        currencyImage.src = "./assets/libralogo.png"
+    }
+
+    if (currencySelect.value == "peso") {
+
+        currencyName.innerHTML = "Peso"
+        currencyImage.src = "./assets/pelologo.png"
+    }
 }
 function convertValues() {
 
     const dolarToday = 5.2
     const euroToday = 6.2
+    const pesoToday = 0.7
+    const libraToday = 7.3
 
-    
+
 
     const currencyValueToConvert = document.querySelector(".currency-value-to-convert")
 
@@ -57,10 +70,24 @@ function convertValues() {
         }).format(inputCurrencyValue / euroToday)
     }
 
+    if (currencySelect.value == "libra") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
+
+            style: "currency", currency: "GBP"
+        }).format(inputCurrencyValue / libraToday)
+    }
+
+    if (currencySelect.value == "peso") {
+        currencyValueConverted.innerHTML = new Intl.NumberFormat("es-AR", {
+
+            style: "currency", currency: "ARS"
+        }).format(inputCurrencyValue / pesoToday)
+    }
+
 
 
     changeCurrency()
-
-    console.log(convertedValue)
+        .
+        console.log(convertedValue)
 
 }
